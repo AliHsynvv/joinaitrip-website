@@ -7,11 +7,11 @@
 import Image from "next/image";
 import { ABOUT_HERO } from "@/constants/about.constants";
 import {
-  heroSectionStyle,
-  heroOverlayStyle,
-  heroContentStyle,
-  heroTitleStyle,
-  heroSubtitleStyle,
+  aboutHeroSectionStyle,
+  aboutHeroOverlayStyle,
+  aboutHeroContentStyle,
+  aboutHeroTitleStyle,
+  aboutHeroSubtitleStyle,
 } from "@/styles/about.styles";
 
 // -----------------------------------------------------------------------------
@@ -20,7 +20,7 @@ import {
 
 export function AboutHero() {
   return (
-    <section style={heroSectionStyle}>
+    <section style={aboutHeroSectionStyle}>
       {/* Background Image */}
       <div style={{ position: "absolute", inset: 0 }}>
         <Image
@@ -31,14 +31,14 @@ export function AboutHero() {
           style={{ objectFit: "cover" }}
           priority
         />
-        <div style={heroOverlayStyle} />
+        <div style={aboutHeroOverlayStyle} />
       </div>
 
       {/* Content */}
-      <div style={heroContentStyle}>
+      <div style={aboutHeroContentStyle}>
         <div style={{ maxWidth: "800px" }}>
-          <h1 style={heroTitleStyle}>{ABOUT_HERO.title}</h1>
-          <p style={heroSubtitleStyle}>{ABOUT_HERO.subtitle}</p>
+          <h1 style={aboutHeroTitleStyle}>{ABOUT_HERO.title}</h1>
+          <p style={aboutHeroSubtitleStyle}>{ABOUT_HERO.subtitle}</p>
         </div>
       </div>
 

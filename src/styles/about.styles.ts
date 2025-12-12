@@ -61,18 +61,18 @@ export const aboutTypography = {
 // Hero Section
 // -----------------------------------------------------------------------------
 
-export const heroSectionStyle: CSSProperties = {
+export const aboutHeroSectionStyle: CSSProperties = {
   position: "relative",
   height: "600px",
 };
 
-export const heroOverlayStyle: CSSProperties = {
+export const aboutHeroOverlayStyle: CSSProperties = {
   position: "absolute",
   inset: 0,
   background: "linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3))",
 };
 
-export const heroContentStyle: CSSProperties = {
+export const aboutHeroContentStyle: CSSProperties = {
   position: "relative",
   zIndex: 10,
   maxWidth: "1400px",
@@ -87,7 +87,7 @@ export const heroContentStyle: CSSProperties = {
   textAlign: "center",
 };
 
-export const heroTitleStyle: CSSProperties = {
+export const aboutHeroTitleStyle: CSSProperties = {
   fontSize: aboutTypography.heroTitle.fontSize,
   fontWeight: aboutTypography.heroTitle.fontWeight,
   color: "#ffffff",
@@ -97,7 +97,7 @@ export const heroTitleStyle: CSSProperties = {
   letterSpacing: aboutTypography.heroTitle.letterSpacing,
 };
 
-export const heroSubtitleStyle: CSSProperties = {
+export const aboutHeroSubtitleStyle: CSSProperties = {
   fontSize: "20px",
   color: "rgba(255, 255, 255, 0.95)",
   lineHeight: 1.6,
