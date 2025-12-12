@@ -8,11 +8,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { SERVICES_HERO } from "@/constants/services.constants";
 import {
-  heroSectionStyle,
-  heroOverlayStyle,
-  heroContentStyle,
-  heroTitleStyle,
-  heroSubtitleStyle,
+  servicesHeroSectionStyle,
+  servicesHeroOverlayStyle,
+  servicesHeroContentStyle,
+  servicesHeroTitleStyle,
+  servicesHeroSubtitleStyle,
   primaryButtonStyle,
   secondaryButtonStyle,
 } from "@/styles/services.styles";
@@ -23,7 +23,7 @@ import {
 
 export function ServicesHero() {
   return (
-    <section style={heroSectionStyle}>
+    <section style={servicesHeroSectionStyle}>
       {/* Background Image */}
       <div style={{ position: "absolute", inset: 0 }}>
         <Image
@@ -34,16 +34,16 @@ export function ServicesHero() {
           style={{ objectFit: "cover" }}
           priority
         />
-        <div style={heroOverlayStyle} />
+        <div style={servicesHeroOverlayStyle} />
       </div>
 
       {/* Content */}
-      <div className="services-hero-content" style={heroContentStyle}>
+      <div className="services-hero-content" style={servicesHeroContentStyle}>
         <div style={{ maxWidth: "650px" }}>
-          <h1 className="services-title" style={heroTitleStyle}>
+          <h1 className="services-title" style={servicesHeroTitleStyle}>
             {SERVICES_HERO.title}
           </h1>
-          <p className="services-desc" style={heroSubtitleStyle}>
+          <p className="services-desc" style={servicesHeroSubtitleStyle}>
             {SERVICES_HERO.subtitle}
           </p>
 

@@ -40,18 +40,18 @@ export const servicesTypography = {
 // Hero Section
 // -----------------------------------------------------------------------------
 
-export const heroSectionStyle: CSSProperties = {
+export const servicesHeroSectionStyle: CSSProperties = {
   position: "relative",
   height: "700px",
 };
 
-export const heroOverlayStyle: CSSProperties = {
+export const servicesHeroOverlayStyle: CSSProperties = {
   position: "absolute",
   inset: 0,
   background: "linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 100%)",
 };
 
-export const heroContentStyle: CSSProperties = {
+export const servicesHeroContentStyle: CSSProperties = {
   position: "relative",
   zIndex: 10,
   maxWidth: "1400px",
@@ -64,7 +64,7 @@ export const heroContentStyle: CSSProperties = {
   justifyContent: "center",
 };
 
-export const heroTitleStyle: CSSProperties = {
+export const servicesHeroTitleStyle: CSSProperties = {
   fontSize: "64px",
   fontWeight: 700,
   lineHeight: 1.1,
@@ -74,7 +74,7 @@ export const heroTitleStyle: CSSProperties = {
   letterSpacing: "-0.02em",
 };
 
-export const heroSubtitleStyle: CSSProperties = {
+export const servicesHeroSubtitleStyle: CSSProperties = {
   fontSize: "20px",
   marginBottom: "40px",
   lineHeight: 1.5,
