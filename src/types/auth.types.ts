@@ -21,7 +21,7 @@ export interface RegisterFormData {
 // Form State Types
 // -----------------------------------------------------------------------------
 
-export interface AuthFormState<T> {
+export interface AuthFormState<T extends object> {
   data: T;
   isLoading: boolean;
   isSuccess: boolean;
@@ -29,7 +29,7 @@ export interface AuthFormState<T> {
   generalError: string | null;
 }
 
-export interface AuthFormOptions<T> {
+export interface AuthFormOptions<T extends object> {
   initialData: T;
   onSubmit: (data: T) => Promise<void>;
   validate?: (data: T) => Partial<Record<keyof T, string>>;

@@ -20,7 +20,7 @@ import {
 // Generic Auth Form Hook
 // -----------------------------------------------------------------------------
 
-export function useAuthForm<T extends Record<string, string>>(
+export function useAuthForm<T extends object>(
   options: AuthFormOptions<T>
 ) {
   const { initialData, onSubmit, validate } = options;
