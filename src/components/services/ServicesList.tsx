@@ -17,11 +17,11 @@ import {
   cardHeaderStyle,
   iconBoxStyle,
   arrowButtonStyle,
-  cardTitleStyle,
-  cardSubtitleStyle,
-  cardDescriptionStyle,
-  featureItemStyle,
-  featureTextStyle,
+  serviceCardTitleStyle,
+  serviceCardSubtitleStyle,
+  serviceCardDescriptionStyle,
+  serviceFeatureItemStyle,
+  serviceFeatureTextStyle,
 } from "@/styles/services.styles";
 import type { ServiceItem, ServiceColorKey } from "@/types/services.types";
 
@@ -65,19 +65,19 @@ function ServiceCard({ service, onClick }: ServiceCardProps) {
 
       {/* Content */}
       <div>
-        <h3 style={cardTitleStyle(isHighlighted)}>{service.title}</h3>
-        <span style={cardSubtitleStyle(isHighlighted)}>{service.subtitle}</span>
-        <p style={cardDescriptionStyle(isHighlighted)}>{service.description}</p>
+        <h3 style={serviceCardTitleStyle(isHighlighted)}>{service.title}</h3>
+        <span style={serviceCardSubtitleStyle(isHighlighted)}>{service.subtitle}</span>
+        <p style={serviceCardDescriptionStyle(isHighlighted)}>{service.description}</p>
 
         {/* Features */}
         <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
           {service.features.map((feature, idx) => (
-            <div key={idx} style={featureItemStyle(isHighlighted)}>
+            <div key={idx} style={serviceFeatureItemStyle(isHighlighted)}>
               <CheckCircle2
                 size={16}
                 color={isHighlighted ? "#a5f3fc" : "#9ca3af"}
               />
-              <span style={featureTextStyle(isHighlighted)}>{feature}</span>
+              <span style={serviceFeatureTextStyle(isHighlighted)}>{feature}</span>
             </div>
           ))}
         </div>

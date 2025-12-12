@@ -204,7 +204,7 @@ export const arrowButtonStyle = (isHighlighted: boolean): CSSProperties => ({
   transition: "all 0.2s",
 });
 
-export const cardTitleStyle = (isHighlighted: boolean): CSSProperties => ({
+export const serviceCardTitleStyle = (isHighlighted: boolean): CSSProperties => ({
   fontSize: "24px",
   fontWeight: 700,
   color: isHighlighted ? "#ffffff" : servicesColors.textPrimary,
@@ -212,7 +212,7 @@ export const cardTitleStyle = (isHighlighted: boolean): CSSProperties => ({
   fontFamily: servicesTypography.fontFamily,
 });
 
-export const cardSubtitleStyle = (isHighlighted: boolean): CSSProperties => ({
+export const serviceCardSubtitleStyle = (isHighlighted: boolean): CSSProperties => ({
   display: "block",
   fontSize: "14px",
   fontWeight: 600,
@@ -222,7 +222,7 @@ export const cardSubtitleStyle = (isHighlighted: boolean): CSSProperties => ({
   letterSpacing: "0.5px",
 });
 
-export const cardDescriptionStyle = (isHighlighted: boolean): CSSProperties => ({
+export const serviceCardDescriptionStyle = (isHighlighted: boolean): CSSProperties => ({
   fontSize: "15px",
   color: isHighlighted ? "#ffffff" : servicesColors.textSecondary,
   lineHeight: 1.6,
@@ -230,13 +230,13 @@ export const cardDescriptionStyle = (isHighlighted: boolean): CSSProperties => (
   fontFamily: servicesTypography.fontFamily,
 });
 
-export const featureItemStyle = (isHighlighted: boolean): CSSProperties => ({
+export const serviceFeatureItemStyle = (isHighlighted: boolean): CSSProperties => ({
   display: "flex",
   alignItems: "center",
   gap: "10px",
 });
 
-export const featureTextStyle = (isHighlighted: boolean): CSSProperties => ({
+export const serviceFeatureTextStyle = (isHighlighted: boolean): CSSProperties => ({
   fontSize: "14px",
   color: isHighlighted ? "#ecfeff" : servicesColors.textLight,
   fontWeight: 500,

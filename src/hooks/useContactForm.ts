@@ -4,19 +4,19 @@
 // =============================================================================
 
 import { useState, useCallback } from "react";
-import type { ContactFormData, ContactFormState, ContactApiResponse } from "@/types/sections.types";
+import type { HomeContactFormData, HomeContactFormState, HomeContactApiResponse } from "@/types/sections.types";
 
 // -----------------------------------------------------------------------------
 // Initial State
 // -----------------------------------------------------------------------------
 
-const initialFormData: ContactFormData = {
+const initialFormData: HomeContactFormData = {
   fullName: "",
   email: "",
   message: "",
 };
 
-const initialFormState: ContactFormState = {
+const initialFormState: HomeContactFormState = {
   ...initialFormData,
   isLoading: false,
   isSuccess: false,
@@ -28,19 +28,19 @@ const initialFormState: ContactFormState = {
 // -----------------------------------------------------------------------------
 
 interface UseContactFormReturn {
-  formState: ContactFormState;
-  handleChange: (field: keyof ContactFormData, value: string) => void;
+  formState: HomeContactFormState;
+  handleChange: (field: keyof HomeContactFormData, value: string) => void;
   handleSubmit: (e: React.FormEvent) => Promise<void>;
   resetForm: () => void;
 }
 
 export function useContactForm(
-  onSubmit?: (data: ContactFormData) => Promise<ContactApiResponse>
+  onSubmit?: (data: HomeContactFormData) => Promise<HomeContactApiResponse>
 ): UseContactFormReturn {
-  const [formState, setFormState] = useState<ContactFormState>(initialFormState);
+  const [formState, setFormState] = useState<HomeContactFormState>(initialFormState);
 
   // Handle input change
-  const handleChange = useCallback((field: keyof ContactFormData, value: string) => {
+  const handleChange = useCallback((field: keyof HomeContactFormData, value: string) => {
     setFormState((prev) => ({
       ...prev,
       [field]: value,
@@ -69,7 +69,7 @@ export function useContactForm(
     setFormState((prev) => ({ ...prev, isLoading: true, error: null }));
 
     try {
-      const formData: ContactFormData = {
+      const formData: HomeContactFormData = {
         fullName: formState.fullName,
         email: formState.email,
         message: formState.message,

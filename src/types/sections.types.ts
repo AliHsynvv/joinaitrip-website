@@ -5,23 +5,23 @@
 import { LucideIcon } from "lucide-react";
 
 // -----------------------------------------------------------------------------
-// Contact Section Types
+// Home Contact Section Types
 // -----------------------------------------------------------------------------
 
-export interface ContactFormData {
+export interface HomeContactFormData {
   fullName: string;
   email: string;
   message: string;
 }
 
-export interface ContactFormState extends ContactFormData {
+export interface HomeContactFormState extends HomeContactFormData {
   isLoading: boolean;
   isSuccess: boolean;
   error: string | null;
 }
 
-// API Response for contact form
-export interface ContactApiResponse {
+// API Response for home contact form
+export interface HomeContactApiResponse {
   success: boolean;
   message?: string;
   error?: string;
