@@ -1,26 +1,123 @@
 @import "tailwindcss";
 
 :root {
+  --primary: #14b8a6;
+  --primary-light: #2dd4bf;
+  --primary-dark: #0d9488;
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1a1a2e;
+  --muted: #6b7280;
+  --muted-light: #9ca3af;
+  --border: #e5e7eb;
+  --border-light: #f3f4f6;
+  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hide scrollbar */
+.hide-scrollbar {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Header Styles */
+.header-nav,
+.header-right {
+  display: none !important;
+}
+
+.mobile-header-right {
+  display: flex !important;
+}
+
+@media (min-width: 1024px) {
+  .header-nav,
+  .header-right {
+    display: flex !important;
+  }
+  
+  .mobile-header-right {
+    display: none !important;
+  }
+}
+
+/* Search Form */
+.search-form-row {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+@media (min-width: 1024px) {
+  .search-form-row {
+    flex-direction: row !important;
+    align-items: stretch !important;
+  }
+}
+
+/* Hero Content */
+.hero-content {
+  padding-top: 120px !important;
+}
+
+@media (min-width: 1024px) {
+  .hero-content {
+    padding-top: 160px !important;
+  }
+}
+
+.hero-title {
+  font-size: 32px !important;
+}
+
+@media (min-width: 640px) {
+  .hero-title {
+    font-size: 40px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 52px !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--border-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted-light);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
 }
