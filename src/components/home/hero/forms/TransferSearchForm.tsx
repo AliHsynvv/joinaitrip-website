@@ -43,6 +43,7 @@ export function TransferSearchForm({ onSearch }: TransferSearchFormProps) {
     <div className="search-form-content" style={{ padding: "0 24px 24px 24px" }}>
       {/* Row 1: From (Airport) <-> To (Hotel) */}
       <div
+        className="form-row form-row-1 transfer-row-1"
         style={{
           display: "flex",
           alignItems: "center",
@@ -96,6 +97,7 @@ export function TransferSearchForm({ onSearch }: TransferSearchFormProps) {
 
       {/* Row 2: Travelers, Luggage, Date, Time */}
       <div
+        className="form-row form-row-2"
         style={{
           display: "flex",
           gap: "16px",

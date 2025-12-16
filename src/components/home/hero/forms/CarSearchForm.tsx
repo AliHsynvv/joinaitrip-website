@@ -35,6 +35,7 @@ export function CarSearchForm({ onSearch }: CarSearchFormProps) {
     <div className="search-form-content" style={{ padding: "0 24px 24px 24px" }}>
       {/* Row 1: Pick-up, Drop-off, Dates, Times */}
       <div
+        className="form-row form-row-1"
         style={{
           display: "flex",
           gap: "16px",

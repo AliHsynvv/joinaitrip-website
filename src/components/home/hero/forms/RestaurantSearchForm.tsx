@@ -33,6 +33,7 @@ export function RestaurantSearchForm({ onSearch }: RestaurantSearchFormProps) {
   return (
     <div className="search-form-content" style={{ padding: "0 24px 24px 24px" }}>
       <div
+        className="form-row form-row-1"
         style={{
           display: "flex",
           alignItems: "center",

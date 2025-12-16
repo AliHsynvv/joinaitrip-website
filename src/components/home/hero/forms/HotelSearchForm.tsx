@@ -33,7 +33,7 @@ export function HotelSearchForm({ onSearch }: HotelSearchFormProps) {
   return (
     <div className="search-form-content" style={{ padding: "0 24px 24px 24px" }}>
       {/* Row 1: Where to */}
-      <div style={{ marginBottom: "16px" }}>
+      <div className="form-row form-row-1" style={{ marginBottom: "16px" }}>
         <FormField
           icon={MapPin}
           placeholder={FORM_LABELS.whereTo}
@@ -48,6 +48,7 @@ export function HotelSearchForm({ onSearch }: HotelSearchFormProps) {
 
       {/* Row 2: Rooms/Guests, Check-in, Check-out, Search */}
       <div
+        className="form-row form-row-2"
         style={{
           display: "flex",
           gap: "16px",

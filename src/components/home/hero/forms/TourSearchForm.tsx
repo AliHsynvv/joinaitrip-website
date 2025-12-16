@@ -34,6 +34,7 @@ export function TourSearchForm({ onSearch }: TourSearchFormProps) {
     <div className="search-form-content" style={{ padding: "0 24px 24px 24px" }}>
       {/* Row 1: Country, Where to */}
       <div
+        className="form-row form-row-1"
         style={{
           display: "flex",
           gap: "16px",
@@ -64,6 +65,7 @@ export function TourSearchForm({ onSearch }: TourSearchFormProps) {
 
       {/* Row 2: Travelers, Date, Price Range, Search */}
       <div
+        className="form-row form-row-2"
         style={{
           display: "flex",
           gap: "16px",
