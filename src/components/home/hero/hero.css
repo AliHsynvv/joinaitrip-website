@@ -82,15 +82,64 @@ html.dark .service-tabs-row button:not([style*="rgba(249, 115, 22"]) {
 }
 
 /* -----------------------------------------------------------------------------
+   Dark Mode + Mobile Combined Styles
+   ----------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  /* Form fields in dark mode on mobile */
+  html.dark .form-row>div,
+  html.dark .flight-form-row-1>div,
+  html.dark .flight-form-row-2>div {
+    background-color: rgba(15, 23, 42, 0.7) !important;
+    border-color: rgba(59, 130, 246, 0.5) !important;
+  }
+
+  /* Form field text in dark mode on mobile */
+  html.dark .search-form-content span,
+  html.dark .search-form-content p {
+    color: #e2e8f0 !important;
+  }
+
+  /* Form field icons in dark mode on mobile */
+  html.dark .search-form-content svg:not(.search-submit-btn svg) {
+    color: #60a5fa !important;
+  }
+
+  /* Trip types row in dark mode on mobile */
+  html.dark .trip-types-row button {
+    color: #94a3b8 !important;
+  }
+
+  html.dark .trip-types-row button[style*="rgb(6, 182, 212)"] {
+    color: #22d3ee !important;
+  }
+}
+
+/* -----------------------------------------------------------------------------
    Mobile Responsive Styles
    ----------------------------------------------------------------------------- */
 
 @media (max-width: 768px) {
-  /* Hero content container - edge to edge */
+
+  /* Global box-sizing for mobile */
+  .hero-content,
+  .hero-content * {
+    box-sizing: border-box !important;
+  }
+
+  /* Hero content container - centered */
   .hero-content {
     padding-left: 0 !important;
     padding-right: 0 !important;
     padding-top: 80px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
   }
 
   .hero-content h1 {
@@ -98,120 +147,256 @@ html.dark .service-tabs-row button:not([style*="rgba(249, 115, 22"]) {
     line-height: 1.2 !important;
     padding: 0 16px !important;
     text-align: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .hero-content p {
     font-size: 14px !important;
     padding: 0 16px !important;
     text-align: center !important;
-  }
-
-  /* Search box wrapper - edge to edge */
-  .hero-content > div:last-child {
-    padding: 0 !important;
+    width: 100% !important;
     max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-  /* Search box outer glass container - edge to edge, no border radius on sides */
-  .search-box-glass {
-    padding: 8px !important;
-    border-radius: 0 !important;
+  /* Search box wrapper - full width and centered */
+  .hero-content>div:last-child,
+  .hero-content>div[style*="max-width"] {
+    padding: 0 !important;
+    padding-top: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
     margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Search box outer glass container - edge to edge */
+  .search-box-glass {
+    padding: 6px !important;
+    border-radius: 0 !important;
+    margin: 0 auto !important;
     border-left: none !important;
     border-right: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   /* Search box inner white container */
   .search-box-inner {
-    border-radius: 16px !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-  /* Service tabs row - horizontal scroll */
+  /* Spacer div between tabs and form - hide on mobile */
+  .search-box-inner>div[style*="height: 24px"] {
+    display: none !important;
+  }
+
+  /* Service tabs row - horizontal scroll, start from left */
   .service-tabs-row {
-    gap: 6px !important;
+    gap: 5px !important;
     justify-content: flex-start !important;
-    padding: 12px !important;
+    padding: 8px 10px !important;
     overflow-x: auto !important;
     flex-wrap: nowrap !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   /* Service tab buttons - compact for mobile */
   .service-tabs-row button {
-    padding: 8px 12px !important;
-    font-size: 12px !important;
-    border-radius: 10px !important;
+    padding: 6px 10px !important;
+    font-size: 11px !important;
+    border-radius: 8px !important;
     flex-shrink: 0 !important;
   }
 
   .service-tabs-row button svg {
-    width: 16px !important;
-    height: 16px !important;
+    width: 14px !important;
+    height: 14px !important;
   }
 
-  /* Form content padding - minimal sides */
+  /* Form content padding - minimal sides, centered */
   .search-form-content {
-    padding: 0 12px 16px 12px !important;
+    padding: 0 10px 12px 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
   }
 
   /* =========================================================================
      2-COLUMN GRID LAYOUT FOR FORM FIELDS
      ========================================================================= */
 
-  /* All form rows - 2 column grid */
+  /* All form rows - 2 column grid, full width */
   .form-row,
   .flight-form-row-1,
-  .flight-form-row-2 {
+  .flight-form-row-2,
+  .hotel-dates-row {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
-    gap: 8px !important;
-    margin-bottom: 8px !important;
+    gap: 6px !important;
+    margin-bottom: 6px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Hotel Guests Row - 3 columns */
+  .hotel-guests-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important;
+    gap: 6px !important;
+    margin-bottom: 6px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Flight form row 2 - Passengers field (3rd child) should be full width */
+  .flight-form-row-2>div:nth-child(3) {
+    grid-column: 1 / -1 !important;
+  }
+
+  /* Tour form row 2 - Price range (3rd child) should be full width */
+  .tour-form-row-2>div:nth-child(3) {
+    grid-column: 1 / -1 !important;
   }
 
   /* Transfer row 1 special - keep swap button in center */
   .transfer-row-1 {
+    display: grid !important;
     grid-template-columns: 1fr auto 1fr !important;
+    gap: 6px !important;
+    margin-bottom: 6px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-  .transfer-row-1 > button {
-    width: 36px !important;
-    height: 36px !important;
+  .transfer-row-1>button {
+    width: 32px !important;
+    height: 32px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 50% !important;
+    background-color: #ffffff !important;
+    border: 1px solid rgba(229, 231, 235, 1) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .transfer-row-1>button svg {
+    width: 14px !important;
+    height: 14px !important;
+    color: #374151 !important;
   }
 
   /* Form field items - compact styling */
-  .form-row > div,
-  .flight-form-row-1 > div,
-  .flight-form-row-2 > div {
+  .form-row>div,
+  .flight-form-row-1>div,
+  .flight-form-row-2>div,
+  .tour-form-row-2>div,
+  .hotel-dates-row>div,
+  .hotel-guests-row>div,
+  .transfer-row-1>div {
     width: 100% !important;
     flex: none !important;
     flex-direction: row !important;
     align-items: center !important;
     background-color: #ffffff !important;
-    border-radius: 10px !important;
-    padding: 10px 12px !important;
-    min-height: 48px !important;
+    border-radius: 8px !important;
+    padding: 8px 10px !important;
+    min-height: auto !important;
     gap: 8px !important;
     border-width: 1.5px !important;
   }
 
-  /* Form field inner content - compact */
-  .form-row > div > div,
-  .flight-form-row-1 > div > div,
-  .flight-form-row-2 > div > div {
+  /* Single item in odd position spans full width (2 columns) */
+  .form-row>div:last-child:nth-child(odd),
+  .flight-form-row-1>div:last-child:nth-child(odd),
+  .flight-form-row-2>div:last-child:nth-child(odd),
+  .tour-form-row-2>div:last-child:nth-child(odd),
+  .hotel-dates-row>div:last-child:nth-child(odd) {
+    grid-column: 1 / -1 !important;
+  }
+
+  /* When there's only 1 field, make it full width */
+  .form-row>div:only-child,
+  .flight-form-row-1>div:only-child,
+  .flight-form-row-2>div:only-child,
+  .tour-form-row-2>div:only-child,
+  .hotel-dates-row>div:only-child {
+    grid-column: 1 / -1 !important;
+  }
+
+  /* Form field inner content - icon + text wrapper */
+  .form-row>div>div,
+  .flight-form-row-1>div>div,
+  .flight-form-row-2>div>div,
+  .tour-form-row-2>div>div,
+  .hotel-dates-row>div>div,
+  .hotel-guests-row>div>div,
+  .transfer-row-1>div>div {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
     gap: 8px !important;
+  }
+
+  /* Label container inside form field (div with p tags) */
+  .form-row>div>div>div,
+  .flight-form-row-1>div>div>div,
+  .flight-form-row-2>div>div>div,
+  .tour-form-row-2>div>div>div,
+  .hotel-dates-row>div>div>div,
+  .hotel-guests-row>div>div>div,
+  .transfer-row-1>div>div>div {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    gap: 0 !important;
+    line-height: 1 !important;
+    width: 100% !important;
   }
 
   /* Form field icons - smaller on mobile */
   .search-form-content svg:not(.search-submit-btn svg) {
-    width: 18px !important;
-    height: 18px !important;
+    width: 16px !important;
+    height: 16px !important;
     flex-shrink: 0 !important;
   }
 
   /* Form field text - smaller on mobile */
-  .search-form-content span,
+  .search-form-content span {
+    font-size: 11px !important;
+    line-height: 1 !important;
+  }
+
+  /* Form field labels (Check-in, Check-out etc) */
   .search-form-content p {
-    font-size: 12px !important;
-    line-height: 1.3 !important;
+    font-size: 11px !important;
+    line-height: 1.1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Tighter spacing for sublabel (2nd p tag) */
+  .search-form-content p:last-child {
+    margin-top: -1px !important;
+    opacity: 0.8 !important;
   }
 
   /* Search button - full width, spans both columns */
@@ -220,40 +405,133 @@ html.dark .service-tabs-row button:not([style*="rgba(249, 115, 22"]) {
     width: 100% !important;
     flex: none !important;
     min-width: unset !important;
-    padding: 14px 24px !important;
-    border-radius: 12px !important;
+    padding: 12px 20px !important;
+    border-radius: 10px !important;
     margin-top: 4px !important;
-    font-size: 15px !important;
+    font-size: 14px !important;
     font-weight: 600 !important;
   }
 
-  /* Trip types row - compact */
+  /* Trip types row - compact, start from left */
   .trip-types-row {
-    gap: 16px !important;
-    padding: 10px 12px !important;
+    gap: 14px !important;
+    padding: 6px 10px !important;
     overflow-x: auto !important;
     justify-content: flex-start !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .trip-types-row button {
-    font-size: 13px !important;
+    font-size: 12px !important;
     white-space: nowrap !important;
   }
 
   /* Bottom row for advanced search + button */
-  .search-form-content > div[style*="justify-content: space-between"] {
+  .search-form-content>div[style*="justify-content: space-between"] {
     display: flex !important;
     flex-direction: column !important;
     gap: 12px !important;
   }
 
-  .search-form-content > div[style*="justify-content: space-between"] button {
+  .search-form-content>div[style*="justify-content: space-between"] button {
     width: 100% !important;
   }
 
   /* Advanced search button - centered */
-  .search-form-content > div[style*="justify-content: space-between"] > button:first-child {
+  .search-form-content>div[style*="justify-content: space-between"]>button:first-child {
     order: 2 !important;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   iPhone 14 Pro Max & Similar Large Phones (around 430px width)
+   ----------------------------------------------------------------------------- */
+
+@media (min-width: 400px) and (max-width: 450px) {
+  .hero-content {
+    padding-top: 100px !important;
+  }
+
+  .hero-content h1 {
+    margin-bottom: 8px !important;
+  }
+
+  .hero-content p {
+    margin-bottom: 16px !important;
+  }
+
+  /* Form fields - more compact for 14 Pro Max */
+  .form-row>div,
+  .flight-form-row-1>div,
+  .flight-form-row-2>div,
+  .tour-form-row-2>div,
+  .hotel-dates-row>div,
+  .hotel-guests-row>div,
+  .transfer-row-1>div {
+    padding: 8px 10px !important;
+    min-height: 42px !important;
+    gap: 6px !important;
+  }
+
+  /* Form row gap - tighter */
+  .form-row,
+  .flight-form-row-1,
+  .flight-form-row-2,
+  .tour-form-row-2,
+  .hotel-dates-row,
+  .hotel-guests-row,
+  .transfer-row-1 {
+    gap: 6px !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* Form content padding - tighter */
+  .search-form-content {
+    padding: 0 10px 12px 10px !important;
+  }
+
+  /* Service tabs - more compact */
+  .service-tabs-row {
+    padding: 10px !important;
+    gap: 5px !important;
+  }
+
+  .service-tabs-row button {
+    padding: 7px 10px !important;
+    font-size: 11px !important;
+  }
+
+  /* Trip types row - compact */
+  .trip-types-row {
+    padding: 8px 10px !important;
+    gap: 12px !important;
+  }
+
+  /* Search button - compact */
+  .search-submit-btn {
+    padding: 12px 20px !important;
+    margin-top: 2px !important;
+  }
+
+  /* Glass container padding */
+  .search-box-glass {
+    padding: 6px !important;
+  }
+
+  /* Ensure labels are tight and symmetrical on 14 Pro Max */
+  .search-form-content p {
+    line-height: 1 !important;
+  }
+
+  .form-row>div>div>div,
+  .flight-form-row-1>div>div>div,
+  .flight-form-row-2>div>div>div,
+  .tour-form-row-2>div>div>div,
+  .hotel-dates-row>div>div>div,
+  .hotel-guests-row>div>div>div,
+  .transfer-row-1>div>div>div {
+    justify-content: center !important;
   }
 }
 
@@ -283,9 +561,9 @@ html.dark .service-tabs-row button:not([style*="rgba(249, 115, 22"]) {
   }
 
   /* Form fields even more compact */
-  .form-row > div,
-  .flight-form-row-1 > div,
-  .flight-form-row-2 > div {
+  .form-row>div,
+  .flight-form-row-1>div,
+  .flight-form-row-2>div {
     padding: 8px 10px !important;
     min-height: 44px !important;
   }
@@ -301,7 +579,7 @@ html.dark .service-tabs-row button:not([style*="rgba(249, 115, 22"]) {
   }
 
   /* Swap button smaller */
-  .transfer-row-1 > button {
+  .transfer-row-1>button {
     width: 32px !important;
     height: 32px !important;
   }
@@ -329,9 +607,9 @@ html.dark .service-tabs-row button:not([style*="rgba(249, 115, 22"]) {
     flex-wrap: wrap !important;
   }
 
-  .form-row > div,
-  .flight-form-row-1 > div,
-  .flight-form-row-2 > div {
+  .form-row>div,
+  .flight-form-row-1>div,
+  .flight-form-row-2>div {
     flex: 1 1 calc(50% - 8px) !important;
     min-width: calc(50% - 8px) !important;
   }
@@ -350,7 +628,504 @@ html.dark .service-tabs-row button:not([style*="rgba(249, 115, 22"]) {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* =============================================================================
+   DESKTOP RESPONSIVE BREAKPOINTS
+   Screen size reference:
+   - 14" laptop: ~1366-1440px
+   - 15-16" laptop: ~1536-1680px
+   - 22"+ monitor: 1920px+
+   - Ultra-wide: 2560px+
+============================================================================= */
+
+/* -----------------------------------------------------------------------------
+   Small Desktop / 14" Laptops (1280px - 1440px)
+----------------------------------------------------------------------------- */
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .hero-content {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    padding-top: 100px !important;
+    max-width: 1400px !important;
+  }
+
+  .hero-content h1 {
+    font-size: 42px !important;
+    line-height: 1.15 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .hero-content p {
+    font-size: 16px !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* Search box wrapper */
+  .hero-content>div[style*="max-width"] {
+    max-width: 1100px !important;
+  }
+
+  .search-box-glass {
+    padding: 20px !important;
+    border-radius: 32px !important;
+  }
+
+  .search-box-inner {
+    border-radius: 20px !important;
+  }
+
+  /* Service tabs */
+  .service-tabs-row {
+    gap: 6px !important;
+    padding: 12px 16px !important;
+  }
+
+  .service-tabs-row button {
+    padding: 10px 14px !important;
+    font-size: 13px !important;
+  }
+
+  .service-tabs-row button svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  /* Form content */
+  .search-form-content {
+    padding: 0 16px 16px 16px !important;
+  }
+
+  /* Form fields */
+  .form-row>div,
+  .flight-form-row-1>div,
+  .flight-form-row-2>div,
+  .hotel-dates-row>div,
+  .hotel-guests-row>div {
+    padding: 12px 14px !important;
+    border-radius: 10px !important;
+  }
+
+  .search-form-content span {
+    font-size: 13px !important;
+  }
+
+  .search-form-content p {
+    font-size: 13px !important;
+  }
+
+  .search-form-content svg:not(.search-submit-btn svg) {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  /* Search button */
+  .search-submit-btn {
+    padding: 14px 32px !important;
+    font-size: 15px !important;
+    height: 50px !important;
+  }
+
+  /* Trip types row */
+  .trip-types-row {
+    padding: 10px 16px !important;
+    gap: 16px !important;
+  }
+
+  .trip-types-row button {
+    font-size: 13px !important;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   Medium Desktop / 15-16" Laptops (1441px - 1680px)
+----------------------------------------------------------------------------- */
+
+@media (min-width: 1441px) and (max-width: 1680px) {
+  .hero-content {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+    padding-top: 120px !important;
+    max-width: 1600px !important;
+  }
+
+  .hero-content h1 {
+    font-size: 48px !important;
+    line-height: 1.15 !important;
+    margin-bottom: 14px !important;
+  }
+
+  .hero-content p {
+    font-size: 17px !important;
+    margin-bottom: 24px !important;
+  }
+
+  /* Search box wrapper */
+  .hero-content>div[style*="max-width"] {
+    max-width: 1300px !important;
+  }
+
+  .search-box-glass {
+    padding: 26px !important;
+    border-radius: 36px !important;
+  }
+
+  .search-box-inner {
+    border-radius: 22px !important;
+  }
+
+  /* Service tabs */
+  .service-tabs-row {
+    gap: 8px !important;
+    padding: 14px 20px !important;
+  }
+
+  .service-tabs-row button {
+    padding: 11px 16px !important;
+    font-size: 14px !important;
+  }
+
+  .service-tabs-row button svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  /* Form content */
+  .search-form-content {
+    padding: 0 20px 20px 20px !important;
+  }
+
+  /* Form fields */
+  .form-row>div,
+  .flight-form-row-1>div,
+  .flight-form-row-2>div,
+  .hotel-dates-row>div,
+  .hotel-guests-row>div {
+    padding: 14px 16px !important;
+    border-radius: 12px !important;
+  }
+
+  .search-form-content span {
+    font-size: 14px !important;
+  }
+
+  .search-form-content p {
+    font-size: 14px !important;
+  }
+
+  .search-form-content svg:not(.search-submit-btn svg) {
+    width: 22px !important;
+    height: 22px !important;
+  }
+
+  /* Search button */
+  .search-submit-btn {
+    padding: 15px 40px !important;
+    font-size: 15px !important;
+    height: 52px !important;
+  }
+
+  /* Trip types row */
+  .trip-types-row {
+    padding: 12px 20px !important;
+    gap: 18px !important;
+  }
+
+  .trip-types-row button {
+    font-size: 14px !important;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   Large Desktop / 22"+ Monitors (1681px - 1920px)
+----------------------------------------------------------------------------- */
+
+@media (min-width: 1681px) and (max-width: 1920px) {
+  .hero-content {
+    padding-left: 48px !important;
+    padding-right: 48px !important;
+    padding-top: 140px !important;
+    max-width: 1800px !important;
+  }
+
+  .hero-content h1 {
+    font-size: 54px !important;
+    line-height: 1.15 !important;
+    margin-bottom: 16px !important;
+  }
+
+  .hero-content p {
+    font-size: 18px !important;
+    margin-bottom: 28px !important;
+  }
+
+  /* Search box wrapper */
+  .hero-content>div[style*="max-width"] {
+    max-width: 1450px !important;
+  }
+
+  .search-box-glass {
+    padding: 30px !important;
+    border-radius: 40px !important;
+  }
+
+  .search-box-inner {
+    border-radius: 24px !important;
+  }
+
+  /* Service tabs */
+  .service-tabs-row {
+    gap: 8px !important;
+    padding: 16px 24px !important;
+  }
+
+  .service-tabs-row button {
+    padding: 12px 18px !important;
+    font-size: 15px !important;
+  }
+
+  .service-tabs-row button svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  /* Form content */
+  .search-form-content {
+    padding: 0 24px 24px 24px !important;
+  }
+
+  /* Form fields */
+  .form-row>div,
+  .flight-form-row-1>div,
+  .flight-form-row-2>div,
+  .hotel-dates-row>div,
+  .hotel-guests-row>div {
+    padding: 16px 18px !important;
+    border-radius: 14px !important;
+  }
+
+  .search-form-content span {
+    font-size: 15px !important;
+  }
+
+  .search-form-content p {
+    font-size: 15px !important;
+  }
+
+  .search-form-content svg:not(.search-submit-btn svg) {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  /* Search button */
+  .search-submit-btn {
+    padding: 16px 48px !important;
+    font-size: 16px !important;
+    height: 56px !important;
+  }
+
+  /* Trip types row */
+  .trip-types-row {
+    padding: 14px 24px !important;
+    gap: 20px !important;
+  }
+
+  .trip-types-row button {
+    font-size: 14px !important;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   Extra Large Desktop / Ultra-wide (1921px+)
+----------------------------------------------------------------------------- */
+
+@media (min-width: 1921px) {
+  .hero-content {
+    padding-left: 60px !important;
+    padding-right: 60px !important;
+    padding-top: 160px !important;
+    max-width: 2000px !important;
+  }
+
+  .hero-content h1 {
+    font-size: 60px !important;
+    line-height: 1.12 !important;
+    margin-bottom: 18px !important;
+  }
+
+  .hero-content p {
+    font-size: 20px !important;
+    margin-bottom: 32px !important;
+  }
+
+  /* Search box wrapper */
+  .hero-content>div[style*="max-width"] {
+    max-width: 1600px !important;
+  }
+
+  .search-box-glass {
+    padding: 36px !important;
+    border-radius: 44px !important;
+  }
+
+  .search-box-inner {
+    border-radius: 28px !important;
+  }
+
+  /* Service tabs */
+  .service-tabs-row {
+    gap: 10px !important;
+    padding: 18px 28px !important;
+  }
+
+  .service-tabs-row button {
+    padding: 14px 22px !important;
+    font-size: 16px !important;
+  }
+
+  .service-tabs-row button svg {
+    width: 22px !important;
+    height: 22px !important;
+  }
+
+  /* Form content */
+  .search-form-content {
+    padding: 0 28px 28px 28px !important;
+  }
+
+  /* Form fields */
+  .form-row>div,
+  .flight-form-row-1>div,
+  .flight-form-row-2>div,
+  .hotel-dates-row>div,
+  .hotel-guests-row>div {
+    padding: 18px 20px !important;
+    border-radius: 16px !important;
+  }
+
+  .search-form-content span {
+    font-size: 16px !important;
+  }
+
+  .search-form-content p {
+    font-size: 16px !important;
+  }
+
+  .search-form-content svg:not(.search-submit-btn svg) {
+    width: 26px !important;
+    height: 26px !important;
+  }
+
+  /* Search button */
+  .search-submit-btn {
+    padding: 18px 56px !important;
+    font-size: 17px !important;
+    height: 60px !important;
+    min-width: 180px !important;
+  }
+
+  /* Trip types row */
+  .trip-types-row {
+    padding: 16px 28px !important;
+    gap: 24px !important;
+  }
+
+  .trip-types-row button {
+    font-size: 15px !important;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   4K Displays (2560px+)
+----------------------------------------------------------------------------- */
+
+@media (min-width: 2560px) {
+  .hero-content {
+    padding-left: 80px !important;
+    padding-right: 80px !important;
+    padding-top: 180px !important;
+    max-width: 2400px !important;
+  }
+
+  .hero-content h1 {
+    font-size: 72px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .hero-content p {
+    font-size: 24px !important;
+    margin-bottom: 36px !important;
+  }
+
+  .hero-content>div[style*="max-width"] {
+    max-width: 1900px !important;
+  }
+
+  .search-box-glass {
+    padding: 44px !important;
+    border-radius: 48px !important;
+  }
+
+  .search-box-inner {
+    border-radius: 32px !important;
+  }
+
+  .service-tabs-row {
+    gap: 12px !important;
+    padding: 20px 32px !important;
+  }
+
+  .service-tabs-row button {
+    padding: 16px 26px !important;
+    font-size: 18px !important;
+  }
+
+  .service-tabs-row button svg {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  .search-form-content {
+    padding: 0 32px 32px 32px !important;
+  }
+
+  .form-row>div,
+  .flight-form-row-1>div,
+  .flight-form-row-2>div,
+  .hotel-dates-row>div,
+  .hotel-guests-row>div {
+    padding: 20px 24px !important;
+    border-radius: 18px !important;
+  }
+
+  .search-form-content span,
+  .search-form-content p {
+    font-size: 18px !important;
+  }
+
+  .search-form-content svg:not(.search-submit-btn svg) {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .search-submit-btn {
+    padding: 20px 64px !important;
+    font-size: 18px !important;
+    height: 64px !important;
+    min-width: 200px !important;
+  }
+
+  .trip-types-row {
+    padding: 18px 32px !important;
+    gap: 28px !important;
+  }
+
+  .trip-types-row button {
+    font-size: 16px !important;
   }
 }

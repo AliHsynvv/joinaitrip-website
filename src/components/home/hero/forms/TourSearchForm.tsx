@@ -7,6 +7,7 @@
 import { MapPin, UserRound, CalendarDays } from "lucide-react";
 import { FormField } from "@/components/ui/FormField";
 import { SearchButton } from "@/components/ui/SearchButton";
+import { AdvancedSearchButton } from "@/components/ui/AdvancedSearchButton";
 import { useTourSearch } from "@/hooks/useSearchForm";
 import { FORM_LABELS, DEFAULT_PRICE_RANGE } from "@/constants/hero.constants";
 
@@ -63,13 +64,15 @@ export function TourSearchForm({ onSearch }: TourSearchFormProps) {
         />
       </div>
 
-      {/* Row 2: Travelers, Date, Price Range, Search */}
+      {/* Row 2: Travelers, Date, Price Range */}
       <div
-        className="form-row form-row-2"
+        className="form-row form-row-2 tour-form-row-2"
         style={{
-          display: "flex",
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr 1fr",
           gap: "16px",
           alignItems: "stretch",
+          marginBottom: "16px",
         }}
       >
         <FormField
@@ -104,9 +107,19 @@ export function TourSearchForm({ onSearch }: TourSearchFormProps) {
           <span style={{ fontSize: "15px", color: "#374151" }}>{FORM_LABELS.price}</span>
           <span style={{ fontSize: "15px", color: "#9ca3af" }}>{FORM_LABELS.priceRange}</span>
         </FormField>
-
-        <SearchButton onClick={handleSubmit} isLoading={isLoading} />
       </div>
+
+      {/* Advanced Search */}
+      <div style={{ marginBottom: "16px" }}>
+        <AdvancedSearchButton
+          onClick={() => {
+            console.log("Open advanced search");
+          }}
+        />
+      </div>
+
+      {/* Search Button - Full Width */}
+      <SearchButton onClick={handleSubmit} isLoading={isLoading} style={{ width: "100%" }} />
     </div>
   );
 }

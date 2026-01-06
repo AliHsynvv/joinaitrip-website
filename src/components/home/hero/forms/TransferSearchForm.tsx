@@ -41,11 +41,12 @@ export function TransferSearchForm({ onSearch }: TransferSearchFormProps) {
 
   return (
     <div className="search-form-content" style={{ padding: "0 24px 24px 24px" }}>
-      {/* Row 1: From (Airport) <-> To (Hotel) */}
+      {/* Row 1: From (Airport) <-> To (Hotel) - 3 columns on desktop */}
       <div
-        className="form-row form-row-1 transfer-row-1"
+        className="transfer-row-1"
         style={{
-          display: "flex",
+          display: "grid",
+          gridTemplateColumns: "1fr auto 1fr",
           alignItems: "center",
           gap: "12px",
           marginBottom: "16px",
@@ -95,14 +96,15 @@ export function TransferSearchForm({ onSearch }: TransferSearchFormProps) {
         />
       </div>
 
-      {/* Row 2: Travelers, Luggage, Date, Time */}
+      {/* Row 2: Travelers, Luggage - 2 columns on desktop */}
       <div
-        className="form-row form-row-2"
+        className="form-row transfer-row-2"
         style={{
-          display: "flex",
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
           gap: "16px",
           alignItems: "stretch",
-          marginBottom: "24px",
+          marginBottom: "16px",
         }}
       >
         <FormField
@@ -125,7 +127,19 @@ export function TransferSearchForm({ onSearch }: TransferSearchFormProps) {
             console.log("Open luggage selector");
           }}
         />
+      </div>
 
+      {/* Row 3: Date, Time - 2 columns on desktop */}
+      <div
+        className="form-row transfer-row-3"
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: "16px",
+          alignItems: "stretch",
+          marginBottom: "16px",
+        }}
+      >
         <FormField
           icon={CalendarDays}
           label={FORM_LABELS.date}
@@ -149,26 +163,20 @@ export function TransferSearchForm({ onSearch }: TransferSearchFormProps) {
         />
       </div>
 
-      {/* Row 3: Advanced Search & Search Button */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
+      {/* Advanced Search */}
+      <div style={{ marginBottom: "16px" }}>
         <AdvancedSearchButton
           onClick={() => {
             console.log("Open advanced search");
           }}
         />
-
-        <SearchButton
-          onClick={handleSubmit}
-          isLoading={isLoading}
-          style={{ padding: "14px 48px" }}
-        />
       </div>
+
+      <SearchButton
+        onClick={handleSubmit}
+        isLoading={isLoading}
+        style={{ width: "100%" }}
+      />
     </div>
   );
 }

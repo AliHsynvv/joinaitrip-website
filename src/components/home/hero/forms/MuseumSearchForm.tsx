@@ -7,6 +7,7 @@
 import { MapPin, CalendarDays } from "lucide-react";
 import { FormField } from "@/components/ui/FormField";
 import { SearchButton } from "@/components/ui/SearchButton";
+import { AdvancedSearchButton } from "@/components/ui/AdvancedSearchButton";
 import { useMuseumSearch } from "@/hooks/useSearchForm";
 import { FORM_LABELS } from "@/constants/hero.constants";
 
@@ -32,13 +33,16 @@ export function MuseumSearchForm({ onSearch }: MuseumSearchFormProps) {
 
   return (
     <div className="search-form-content" style={{ padding: "0 24px 24px 24px" }}>
+      {/* Row 1: Location and Date */}
       <div
         className="form-row form-row-1"
         style={{
-          display: "flex",
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
           alignItems: "center",
           gap: "16px",
           paddingTop: "8px",
+          marginBottom: "16px",
         }}
       >
         <FormField
@@ -46,7 +50,6 @@ export function MuseumSearchForm({ onSearch }: MuseumSearchFormProps) {
           placeholder={FORM_LABELS.goingTo}
           variant="white"
           iconColor="#374151"
-          flex={1.5}
           style={{ padding: "16px 20px", borderRadius: "8px" }}
           onClick={() => {
             console.log("Open location picker");
@@ -67,13 +70,23 @@ export function MuseumSearchForm({ onSearch }: MuseumSearchFormProps) {
             <p style={{ fontSize: "15px", color: "#374151", margin: 0 }}>Aug 20, 2025</p>
           </div>
         </FormField>
+      </div>
 
-        <SearchButton
-          onClick={handleSubmit}
-          isLoading={isLoading}
-          style={{ padding: "16px 48px" }}
+      {/* Advanced Search */}
+      <div style={{ marginBottom: "16px" }}>
+        <AdvancedSearchButton
+          onClick={() => {
+            console.log("Open advanced search");
+          }}
         />
       </div>
+
+      {/* Search Button - Full Width */}
+      <SearchButton
+        onClick={handleSubmit}
+        isLoading={isLoading}
+        style={{ width: "100%" }}
+      />
     </div>
   );
 }

@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { FormField } from "@/components/ui/FormField";
 import { SearchButton } from "@/components/ui/SearchButton";
+import { AdvancedSearchButton } from "@/components/ui/AdvancedSearchButton";
 import { TripTypeSelector } from "../TripTypeSelector";
 import { useFlightSearch } from "@/hooks/useSearchForm";
 import { FORM_LABELS } from "@/constants/hero.constants";
@@ -81,13 +82,15 @@ export function FlightSearchForm({ onSearch }: FlightSearchFormProps) {
           />
         </div>
 
-        {/* Row 2: Dates, Passengers, Search */}
+        {/* Row 2: Dates, Passengers */}
         <div
           className="flight-form-row-2"
           style={{
-            display: "flex",
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr 1fr",
             gap: "16px",
             alignItems: "stretch",
+            marginBottom: "16px",
           }}
         >
           <FormField
@@ -106,7 +109,18 @@ export function FlightSearchForm({ onSearch }: FlightSearchFormProps) {
             label={FORM_LABELS.checkOut}
             sublabel={FORM_LABELS.selectDate}
             variant="glass"
+            style={
+              formData.tripType === "oneway"
+                ? {
+                    opacity: 0.5,
+                    pointerEvents: "none",
+                    backgroundColor: "rgba(107, 114, 128, 0.1)", // Neutral gray tint
+                    filter: "grayscale(100%)",
+                  }
+                : undefined
+            }
             onClick={() => {
+              if (formData.tripType === "oneway") return;
               // TODO: Open date picker
               console.log("Open check-out date picker");
             }}
@@ -116,18 +130,28 @@ export function FlightSearchForm({ onSearch }: FlightSearchFormProps) {
             icon={UserRound}
             value={FORM_LABELS.passengersDefault}
             variant="glass"
-            flex={1.2}
             onClick={() => {
               // TODO: Open passengers/cabin class selector
               console.log("Open passengers selector");
             }}
           />
+        </div>
 
-          <SearchButton
-            onClick={handleSubmit}
-            isLoading={isLoading}
+        {/* Advanced Search */}
+        <div style={{ marginBottom: "16px" }}>
+          <AdvancedSearchButton
+            onClick={() => {
+              console.log("Open advanced search");
+            }}
           />
         </div>
+
+        {/* Search Button - Full Width */}
+        <SearchButton
+          onClick={handleSubmit}
+          isLoading={isLoading}
+          style={{ width: "100%" }}
+        />
       </div>
     </>
   );

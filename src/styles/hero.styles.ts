@@ -246,13 +246,17 @@ export const searchButtonStyle: CSSProperties = {
   backgroundColor: colors.primary,
   color: colors.textWhite,
   fontWeight: typography.weights.semibold,
-  padding: `0 48px`,
+  padding: `16px 48px`,
+  height: "56px",
   borderRadius: borderRadius.xl,
   border: "none",
   cursor: "pointer",
   whiteSpace: "nowrap",
   fontSize: typography.sizes.xl,
   minWidth: "160px",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
 };
 
 // Advanced Search Button

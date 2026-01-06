@@ -7,6 +7,7 @@
 import { MapPin, UserRound, CalendarDays } from "lucide-react";
 import { FormField } from "@/components/ui/FormField";
 import { SearchButton } from "@/components/ui/SearchButton";
+import { AdvancedSearchButton } from "@/components/ui/AdvancedSearchButton";
 import { useGuidesSearch } from "@/hooks/useSearchForm";
 import { FORM_LABELS } from "@/constants/hero.constants";
 
@@ -63,13 +64,15 @@ export function GuidesSearchForm({ onSearch }: GuidesSearchFormProps) {
         />
       </div>
 
-      {/* Row 2: Travelers, Date, Search */}
+      {/* Row 2: Travelers, Date */}
       <div
         className="form-row form-row-2"
         style={{
-          display: "flex",
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
           gap: "16px",
           alignItems: "stretch",
+          marginBottom: "16px",
         }}
       >
         <FormField
@@ -92,9 +95,19 @@ export function GuidesSearchForm({ onSearch }: GuidesSearchFormProps) {
             console.log("Open date picker");
           }}
         />
-
-        <SearchButton onClick={handleSubmit} isLoading={isLoading} variant="wide" />
       </div>
+
+      {/* Advanced Search */}
+      <div style={{ marginBottom: "16px" }}>
+        <AdvancedSearchButton
+          onClick={() => {
+            console.log("Open advanced search");
+          }}
+        />
+      </div>
+
+      {/* Search Button - Full Width */}
+      <SearchButton onClick={handleSubmit} isLoading={isLoading} style={{ width: "100%" }} />
     </div>
   );
 }
